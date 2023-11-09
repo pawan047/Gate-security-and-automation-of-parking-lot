@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1082093110479",
+    "project_id": "text-detector-8250a",
+    "storage_bucket": "text-detector-8250a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082093110479:android:17e8f0ef49f0a7ab1a63ba",
+        "android_client_info": {
+          "package_name": "com.example.scanner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgmJ5nAlwePSDgJE3xQOoS5iR-W9PI5IU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

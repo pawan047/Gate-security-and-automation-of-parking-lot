@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+     <ImageView
+         android:layout_width="100dp"
+         android:layout_height="100dp"
+         android:id="@+id/idIVLogo"
+         android:layout_marginTop="20dp"
+         android:src="@drawable/logo"
+         android:layout_centerHorizontal="true"
+         android:contentDescription="TODO" />
+   <ImageView
+       android:layout_width="100dp"
+       android:layout_height="100dp"
+       android:src="@drawable/security"
+       android:layout_centerHorizontal="true"
+       android:layout_below="@+id/udTVHead"
+       android:layout_marginTop="20dp"
+       android:id="@+id/logosecurity"
+       />
+
+      <TextView
+          android:id="@+id/udTVHead"
+          android:layout_width="match_parent"
+          android:layout_height="70dp"
+          android:layout_below="@+id/idIVLogo"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="30dp"
+          android:layout_marginEnd="30dp"
+          android:layout_marginStart="20dp"
+          android:gravity="center"
+
+          android:text="Welcome to National Institute Of Technology Srinagar"
+          android:textAlignment="center"
+          android:textColor="@color/black_shade_1"
+          android:textSize="20sp"
+          android:textStyle="bold"
+          />
+    <Button
+        android:id="@+id/idbtnCapture"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/udTVHead"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/btn_bg"
+        android:text="Login"
+        android:textColor="@color/white"
+        android:textColorLink="#F1E4E4"
+        android:textSize="15sp" />
+    <Button
+        android:id="@+id/idReadbtn"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/idbtnCapture"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="Read Instructions"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_bg"
+        android:textColorLink="#F1E4E4"
+        android:textSize="15sp"/>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".detection">
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+
+        android:src="@drawable/sample_image" />
+
+    <Button
+        android:id="@+id/detectTextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/textDisplay"
+        android:text="Detect Text" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="@color/black_shade_1"
+          android:id="@+id/textDisplay"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:text="Detected text will display here"
+        android:layout_below="@+id/imageView"
+
+        />
+
+</RelativeLayout>
