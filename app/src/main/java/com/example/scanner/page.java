@@ -21,61 +21,58 @@ import android.telephony.SmsManager;
 import android.widget.EditText;
 
 public class page extends AppCompatActivity {
-    private EditText editText1,editText2;
-    private  Button btnSendmsg,btnCall;
-    private static final int SEND_SMS_PERMISSION_CODE = 101;
+    private EditText editText1, editText2;
+    private Button btnSendmsg, btnCall;
+    static final int SEND_SMS_PERMISSION_CODE = 101;
+
     @Override
-
-
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_page);
-       btnSendmsg = findViewById(R.id.btnsendmsg);
-       btnCall=findViewById(R.id.idmakeCall);
-        btnSendmsg.setOnClickListener(new View.OnClickListener() {
+        btnSendmsg = findViewById(R.id.btnsendmsg);
+        btnCall = findViewById(R.id.idmakeCall);
+        btnSendmsg.setOnClickListener(
+                new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                       sendMessage(v);
+                        sendMessage(v);
                     }
                 });
-        btnCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText phoneNumberEditText = findViewById(R.id.phoneNumberEditText);
+        btnCall.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        EditText phoneNumberEditText = findViewById(R.id.phoneNumberEditText);
 
-                String phoneNumber = phoneNumberEditText.getText().toString();
+                        String phoneNumber = phoneNumberEditText.getText().toString();
 
-                // Create an Intent to initiate the phone call
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:" + phoneNumber));
+                        // Create an Intent to initiate the phone call
+                        Intent callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.setData(Uri.parse("tel:" + phoneNumber));
 
-                // Check for CALL_PHONE permission before making the call
-                if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) != 0) {
-                    requestPermissions(new String[]{android.Manifest.permission.CALL_PHONE}, 101);
-                } else {
-                    startActivity(callIntent);
-                }
-            }
-        });
+                        // Check for CALL_PHONE permission before making the call
+                        if (checkSelfPermission(android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                            requestPermissions(
+                                    new String[] {android.Manifest.permission.CALL_PHONE}, 101);
+                        } else {
+                            startActivity(callIntent);
+                        }
+                    }
+                });
     }
-
 
     public void sendMessage(View view) {
         EditText phoneNumberEditText = findViewById(R.id.phoneNumberEditText);
         EditText messageEditText = findViewById(R.id.messageEditText);
 
         String phoneNumber = phoneNumberEditText.getText().toString();
-        String messageText = messageEditText.getText().toString();
+        String messageText ="HeLLo "+phoneNumber+" Welcome to the NIT Srinagar your vehicle is to be parked at parking A slot 15";
 
         if (checkPermission()) {
             sendSMS(phoneNumber, messageText);
         } else {
             ActivityCompat.requestPermissions(
-                    this,
-                    new String[]{Manifest.permission.SEND_SMS},
-                    SEND_SMS_PERMISSION_CODE
-            );
+                    this, new String[] {Manifest.permission.SEND_SMS}, SEND_SMS_PERMISSION_CODE);
         }
     }
 
@@ -91,14 +88,13 @@ public class page extends AppCompatActivity {
     }
 
     private boolean checkPermission() {
-        return ContextCompat.checkSelfPermission(
-                this,
-                Manifest.permission.SEND_SMS
-        ) == PackageManager.PERMISSION_GRANTED;
+        return ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
+                == PackageManager.PERMISSION_GRANTED;
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(
+            int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == SEND_SMS_PERMISSION_CODE) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -109,5 +105,4 @@ public class page extends AppCompatActivity {
             }
         }
     }
-
-}
+    }

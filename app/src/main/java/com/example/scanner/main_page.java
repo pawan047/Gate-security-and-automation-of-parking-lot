@@ -15,7 +15,7 @@ public class main_page extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
         btn_for_new_car=findViewById(R.id.idbtnNEW_car);
         btn_for_call=findViewById(R.id.idbtnCall_car);
-        btn_for_manually=findViewById(R.id.idbtnName_manually_car);
+      //  btn_for_manually=findViewById(R.id.idbtnName_manually_car);
         btn_for_scan_car=findViewById(R.id.idbtnScan_car);
 
         btn_for_new_car.setOnClickListener(new View.OnClickListener() {
@@ -34,8 +34,9 @@ public class main_page extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-                        startActivity(new Intent(main_page.this,text_scanner.class));
+                        startActivity(new Intent(main_page.this,QRCode.class));
                     }
                 });
+
     }
 }
